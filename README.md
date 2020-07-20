@@ -1,2 +1,0 @@
-# Risima-Ngobe
-Creators page 
