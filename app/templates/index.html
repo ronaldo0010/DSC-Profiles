@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"  content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.svg') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tech Mentors</title>
+  </head>
+  <body class="container">
+
+    <header id="header">
+      <span id='logo-banner'><img id="logo"class="container"src="{{ url_for('static', filename='images/logo.svg') }}" alt=""></span>
+      <h1>Developer Student Club</h1>
+      <p>University of Cape Town</p>
+    </header>
+
+    <div >
+      <p>
+        As the first Developer Student Club in South Africa, DSC UCT prides
+        itself on preparing student developers for the real world, in the best
+        way possible. We teach people how to code, and turn coders into
+        developers by exposing them to the tools and technologies used in
+        industry. Our developers then become drivers of change, as they use
+        what they have learnt to build tech solutions to local and global
+        issues.
+      </p>
+    </div>
+
+    {% block content %}
+
+    {% endblock%}
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "index.html"%}
+{% block content %}
+
+<h2 class="header">Meet the tech stack!</h2>
+<div class="container">
+
+  {% for i in range(0, stop) %}
+  <div class="profile-card">
+    <span class="name">{{ ls[i]["name"] }}</span>
+    <img class= "pfp" src={{ ls[i]["photo"] }}>
+    <a href="{{ ls[i]["linked"] }}"><i class="fa fa-linkedin"></i></a>
+    <a href="{{ ls[i]["git"] }}"><i class="fa fa-github"></i></a>
+    {% if ls[i]["web"] == None %}
+      <h1>grrrrr</h1>
+    {% else %}
+      <a href="{{ ls[i]["web"] }}"><i class="fa fa-user-circle"></i></a>
+    {% endif%}
+  </div>
+  <br>
+  {% endfor %}
+</div>
+
+{% endblock %}
