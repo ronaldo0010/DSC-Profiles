@@ -12,15 +12,15 @@ def about():
 
     ls = [
     {
-    'name': 'Wavhudi',
-    'photo': pht+"Wavhudi.jpg",
+    'name': 'Wavhudi temp-sur',
+    'photo': pht+"Wavhudi.png",
     },
     {
-    'name': 'Ryan',
-    'photo': pht+"Ryan.jpg",
+    'name': 'Ryan temp-sur',
+    'photo': pht+"Ryan.png",
     },
     {
-    'name': 'Ronaldo',
+    'name': 'Ronaldo temp-sur',
     'photo': pht+"Ronaldo.png",
     'git': "https://github.com/ronaldo0010",
     'web': "https://rcedras.herokuapp.com/",
@@ -29,29 +29,29 @@ def about():
 
     },
     {
-    'name': 'Richard',
-    'photo': pht+"Richard.jpg",
+    'name': 'Richard temp-sur',
+    'photo': pht+"Richard.png",
     'git': "https://github.com/ronaldo0010",
     'linked': "https://www.linkedin.com/in/ronaldo-cedras-80b7a9162/",
     'web': "https://rcedras.herokuapp.com/"
     },
     {
-    'name': 'Nkosi',
+    'name': 'Nkosi temp-sur',
     'photo': pht+"Nkosi.png",
     'git': "https://github.com/ronaldo0010",
     'linked': "https://www.linkedin.com/in/ronaldo-cedras-80b7a9162/",
     'web': "https://rcedras.herokuapp.com/"
     },
     {
-    'name': 'Jonathan DK',
-    'photo': pht+"Jonathan_dk.jpg",
+    'name': 'Jonathan temp-sur',
+    'photo': pht+"Jonathan_dk.png",
     'git': "https://github.com/ronaldo0010",
     'linked': "https://www.linkedin.com/in/ronaldo-cedras-80b7a9162/",
     'web': "https://rcedras.herokuapp.com/"
     },
     {
-    'name': 'George',
-    'photo': pht+"George.jpg",
+    'name': 'George temp-sur',
+    'photo': pht+"George.png",
     'linked': "https://www.linkedin.com/in/ronaldo-cedras-80b7a9162/",
     }
     ]
@@ -62,5 +62,7 @@ def about():
             ls[i]['web'] = None
         if 'git' not in ls[i]:
             ls[i]['git'] = None
+        if 'role' not in ls[i]:
+            ls[i]['role'] = "Tech Mentor"
 
     return render_template('about.html', ls=ls, stop=len(ls))
