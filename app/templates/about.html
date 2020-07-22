@@ -7,9 +7,9 @@
 
 </div>
 {% for i in range(1,stop) %}
-<div class="profile-card col-sm">
+<div class="profile-card col-sm" data-toggle="modal" data-target={{"#" + ls[i]["mid"]}}>
 
-  <span class="name">{{ ls[i]["name"] }}</span>
+  <span  class="name">{{ ls[i]["name"] }}</span>
 
   <div class="avatar">
     <img class= "pfp" src={{ ls[i]["photo"] }}>
@@ -31,6 +31,22 @@
     {% endif%}
   </div>
 
+</div>
+
+<div class="modal" id={{ls[i]["mid"]}}>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">{{ls[i]["name"]}}</h2>
+      </div>
+      <div class="modal-body">
+        <p>{{ls[i]["intro"]}}</p>
+      </div>
+      <div class="modal-footer">
+        <p>{{ls[i]["lang"]}}</p>
+      </div>
+    </div>
+  </div>
 </div>
 {% endfor %}
 
