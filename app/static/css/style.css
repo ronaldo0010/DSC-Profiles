@@ -1,3 +1,4 @@
+
 body {
   background-color:#767676;
 }
@@ -10,7 +11,7 @@ body {
 header {
   text-align: center;
   margin-top: 5%;
-  margin-bottom: 3%;
+  margin-bottom: 7%;
   color: white;
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
@@ -35,17 +36,22 @@ a:hover {
 }
 
 .profile-card {
-  width: 200px;
-  height: 245px;
+  width: 240px;
+  height: 265px;
   margin: 0%;
   padding: 0%;
   color: white;
   background-color: Black;
-  text-align: center;
-  border-radius: 10px;
-  margin-bottom: 2%;
+
+  border-radius: 1rem;
+  margin-bottom: 2rem;
   padding-top: 1%;
   padding-bottom: 1%;
+  box-shadow: 0px, 2px, 8px, 0px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
 }
 
 .profile-card :active{
@@ -59,9 +65,10 @@ a:hover {
 .wrapper-body {
   background-color: white;
   border-radius: 50px;
-  padding: 2% 20%;
+  padding: 2% 10%;
   font-family: 'Raleway', sans-serif;
   font-size: 1.2em;
+  box-sizing: border-box;
 }
 
 #intro {
@@ -81,10 +88,32 @@ a:hover {
   margin-bottom: 1%;
 }
 
+.icon {
+  display:grid;
+  justify-content: center;
+}
+
 .role {
   padding-top: 0.2em;
 }
 .name {
   padding-top: 0.2em;
   padding-bottom: 0.3em;
+}
+
+.wrapper-flex {
+  box-sizing: border-box;
+  display: flex;
+  width: inherit;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#contain {
+    box-sizing: border-box;
+}
+
+
+#card {
+  margin-right: 2.5em;
 }

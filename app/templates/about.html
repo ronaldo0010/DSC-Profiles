@@ -1,54 +1,62 @@
 {% extends "index.html"%}
 {% block content %}
+<div id="contain">
 
-<h2 class="header">Meet the tech stack!</h2>
+  <h2 class="header">Meet the tech stack!</h2>
 
-<div class="row">
+  <div class="wrapper-flex">
+    {% for i in range(0, stop) %}
+    <div class="d-flex justify-content-between">
+      <div id="card" class="profile-card col-sm" data-toggle="modal" data-target={{"#" + ls[i]["mid"]}}>
 
-</div>
-{% for i in range(1,stop) %}
-<div class="profile-card col-sm" data-toggle="modal" data-target={{"#" + ls[i]["mid"]}}>
+        <span  class="name">{{ ls[i]["name"] }}</span>
 
-  <span  class="name">{{ ls[i]["name"] }}</span>
+        <div class="avatar">
+          <img class= "pfp" src={{ ls[i]["photo"] }}>
+        </div>
 
-  <div class="avatar">
-    <img class= "pfp" src={{ ls[i]["photo"] }}>
-  </div>
+        <div class="role">
+          {% if ls[i]["role"] != None %}
+            <p>{{ ls[i]["role"] }}</p>
+          {% endif%}
+        </div>
 
-  <div class="role">
-    {% if ls[i]["role"] != None %}
-      <p>{{ ls[i]["role"] }}</p>
-    {% endif%}
-  </div>
+        <div class="icon-row">
+          {% if ls[i]["git"] != None %}
+            <a href={{ ls[i]["git"] }} target="_blank"><i class="fa fa-github icon"></i></a>
+          {% endif%}
+          <a href={{ ls[i]["linked"] }}" target="_blank"><i class="fa fa-linkedin icon"></i></a>
 
-  <div class="icon-row">
-    <a href="{{ ls[i]["linked"] }}"><i class="fa fa-linkedin"></i></a>
-    {% if ls[i]["web"] != None %}
-      <a href="{{ ls[i]["web"] }}"><i class="fa fa-user-circle"></i></a>
-    {% endif%}
-    {% if ls[i]["git"] != None %}
-      <a href="{{ ls[i]["git"] }}"><i class="fa fa-github"></i></a>
-    {% endif%}
-  </div>
 
-</div>
 
-<div class="modal" id={{ls[i]["mid"]}}>
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title">{{ls[i]["name"]}}</h2>
+          {% if ls[i]["web"] != None %}
+            <a href="{{ ls[i]["web"] }}" target="_blank"><i class="fa fa-link icon"></i></a>
+          {% endif%}
+
+        </div>
+
       </div>
-      <div class="modal-body">
-        <p>{{ls[i]["intro"]}}</p>
+
+      <div class="modal" id={{ls[i]["mid"]}}>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">{{ls[i]["name"]}}</h2>
+            </div>
+            <div class="modal-body">
+              <p>{{ls[i]["intro"]}}</p>
+            </div>
+            <div class="modal-footer">
+              <p>{{ls[i]["lang"]}}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
-        <p>{{ls[i]["lang"]}}</p>
-      </div>
+
     </div>
+
+    {% endfor %}
   </div>
+
 </div>
-{% endfor %}
-
-
 {% endblock %}
