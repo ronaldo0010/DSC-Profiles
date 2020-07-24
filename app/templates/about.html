@@ -12,7 +12,12 @@
         <span  class="name">{{ ls[i]["name"] }}</span>
 
         <div class="avatar">
+          {% if "photo" not in ls[i] %}
+          <img class= "pfp" src= {{ url_for('static', filename='/images/stock.png') }}>
+          {% else %}
           <img class= "pfp" src={{ ls[i]["photo"] }}>
+
+          {% endif%}
         </div>
 
         <div class="role">
@@ -25,9 +30,8 @@
           {% if ls[i]["git"] != None %}
             <a href={{ ls[i]["git"] }} target="_blank"><i class="fa fa-github icon"></i></a>
           {% endif%}
+
           <a href={{ ls[i]["linked"] }}" target="_blank"><i class="fa fa-linkedin icon"></i></a>
-
-
 
           {% if ls[i]["web"] != None %}
             <a href="{{ ls[i]["web"] }}" target="_blank"><i class="fa fa-link icon"></i></a>

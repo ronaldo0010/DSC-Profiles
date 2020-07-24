@@ -54,10 +54,6 @@ a:hover {
   text-align: center;
 }
 
-.profile-card :active{
-  color: Grey;
-  background-color: rgba(0,0,0,0.6)
-}
 .name {
   font-size: 1em;
   margin-top: 1%;
@@ -91,6 +87,7 @@ a:hover {
 .icon {
   display:grid;
   justify-content: center;
+  margin-right: 0.4em;
 }
 
 .role {

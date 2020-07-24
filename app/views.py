@@ -12,17 +12,18 @@ def about():
     dsc = "https://www.linkedin.com/company/dscuct/"
     ronaldo = "Ronaldo Cedras, is a third year computer science student at Stellenbosch University. Since a young age, he has shown interest in computers and making it do things. I joined DSC on a quest to better myself as a developer and becoming a more well-rounded software engineer. As a tech mentor I hope to help mould students to exactly this. In his free time he watches animated philosophy on YouTube, clicks on heads in Rainbow Six Siege and surfs the internet."
     suvana = "Suvana, who is one of our Tech mentors, is a full-time student at the university of Cape Town. She is in her final year of study in Electrical and Computer Engineering. Suvana joined the DSC to put in practice the theory she learnt on campus and to help others. “The community space was filled with exciting people who were eager to take on real problems”"
-    
+
     ls = [
+
 {
-    'name': "Ronaldo Cedras",
-    'git': "https://github.com/ronaldo0010",
-    'web': "https://rcedras.herokuapp.com/",
-    'role': "Web & Mobile apps",
-    'lang': "Python, Java, JS, Dart, Html, CSS",
-    'intro': ronaldo,
-    'photo':"https://media-exp1.licdn.com/dms/image/C5603AQETGGYPsRiQ1w/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=lkmMVZGV8blloCMovclR0ZvAKHZeZbhpfiJBPrZrtZk",
-    'linked': "https://www.linkedin.com/in/ronaldo-cedras-80b7a9162/",
+    'name': "Nkosilathi Tauro",
+    'git': "https://github.com/nkosi-tauro",
+    'web': "https://nkositauro.me/",
+    'role': "Web, Mobile Apps & Games",
+    'lang': "Python, Swift, JavaScript, Java, C#",
+    'linked': "https://www.linkedin.com/in/nkosi-tauro/",
+    'photo': "https://media-exp1.licdn.com/dms/image/C5603AQGGhtbzhC7rHQ/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=GTAZz1sNGBP9o-UgWZsjhdrmEVWH0ck_oRw-VqMF8cU",
+    'intro': suvana,
 },
 {
     'name': "George Rautenbach",
@@ -32,7 +33,7 @@ def about():
     'lang': "Bash, Go, Python, SQL, PHP",
     'linked': "https://www.linkedin.com/in/jans-rautenbach/",
     'photo':"https://media-exp1.licdn.com/dms/image/C5603AQEHFxW-n9eV3g/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=xGVFAWyL9t_rJBickEE6BzG0cP_ZqXWT2XeDpAAbTzE",
-    'intro': suvana,
+    'intro': ronaldo,
 },
 {
     'name': "Suvana Rohanlal",
@@ -50,9 +51,20 @@ def about():
     'role': "Mobile Apps",
     'lang': "Java, Python, HTML, CSS, JS, C++, Dart, Flutter, SQL",
     'linked': "https://www.linkedin.com/in/nkanyiso-sigwaza-57734a131/",
-    'photo':"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
     'intro': suvana,
 },
+{
+    'name': "Ronaldo Cedras",
+    'git': "https://github.com/ronaldo0010",
+    'web': "https://rcedras.herokuapp.com/",
+    'role': "Web & Mobile apps",
+    'lang': "Python, Java, JS, Dart, Html, CSS",
+    'intro': ronaldo,
+    'photo':"https://media-exp1.licdn.com/dms/image/C5603AQETGGYPsRiQ1w/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=lkmMVZGV8blloCMovclR0ZvAKHZeZbhpfiJBPrZrtZk",
+    'linked': "https://www.linkedin.com/in/ronaldo-cedras-80b7a9162/",
+},
+
+
 
     ]
     for i in range(len(ls)):
@@ -64,10 +76,7 @@ def about():
             ls[i]['git'] = None
         if 'role' not in ls[i]:
             ls[i]['role'] = "Tech Mentor"
-        if 'intro' not in ls[i]:
-            ls[i]['intro'] = ' '
-        if 'lang' not in ls[i]:
-            ls[i]['lang'] = ' '
+
         ls[i]['mid'] = mid_gen()
 
     return render_template('about.html', ls=ls, stop=len(ls))
