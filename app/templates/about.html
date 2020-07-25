@@ -2,8 +2,55 @@
 {% block content %}
 <div id="contain">
 
-  <h2 class="header">Meet the tech stack!</h2>
+  <h2 class="header">Meet the Admin team!</h2>
+  <div class="wrapper-flex">
+    {% for i in range(0, stop1) %}
+    <div class="d-flex justify-content-between">
+      <div id="card" class="profile-card col-sm" data-toggle="modal" data-target={{"#" + ls1[i]["mid"]}}>
 
+        <span  class="name">{{ ls1[i]["name"] }}</span>
+
+        <div class="avatar">
+          {% if "photo" not in ls1[i] %}
+          <img class= "pfp" src= {{ url_for('static', filename='/images/stock.png') }}>
+          {% else %}
+          <img class= "pfp" src={{ ls1[i]["photo"] }}>
+
+          {% endif%}
+        </div>
+
+        <div class="role">
+          {% if ls1[i]["role"] != None %}
+            <p>{{ ls1[i]["role"] }}</p>
+          {% endif%}
+        </div>
+
+        <div class="icon-row">
+          <a href={{ ls1[i]["linked"] }}" target="_blank"><i class="fa fa-linkedin icon"></i></a>
+        </div>
+
+      </div>
+
+      <div class="modal" id={{ls1[i]["mid"]}}>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">{{ls1[i]["name"]}}</h2>
+            </div>
+            <div class="modal-body">
+              <p>{{ls1[i]["intro"]}}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+  <div class="divider div-transparent div-dot"></div>
+  
+  <h2 class="header">Meet the Tech Stack!</h2>
   <div class="wrapper-flex">
     {% for i in range(0, stop) %}
     <div class="d-flex justify-content-between">
@@ -60,6 +107,9 @@
     </div>
 
     {% endfor %}
+    </div>
+
+
   </div>
 
 </div>
