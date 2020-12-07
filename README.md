@@ -1,2 +1,4 @@
-# DSC-Profiles
-a Page for DSC UCT to display tech mentors
+## DSC-UCT website
+# Overview
+
+This repository serves as the source code for the official dsc-uct website. 
